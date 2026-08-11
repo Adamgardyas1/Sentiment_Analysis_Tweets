@@ -42,15 +42,11 @@ df = df[['text']]
 - Tokenized sentences into individual words using `nltk.word_tokenize` and eliminated common English stop words (`nltk.corpus.stopwords`).
 
 ```python
-import nltk
-from nltk.corpus import stopwords
-
-# Download NLTK data packages
+# Download stop words
 nltk.download('stopwords')
-nltk.download('punkt')
-
-# Load English stop words
 stop_words = set(stopwords.words('english'))
+```
+
 ```
 
 ```python
