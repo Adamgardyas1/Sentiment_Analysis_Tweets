@@ -1,6 +1,7 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NLTK](https://img.shields.io/badge/NLTK-3776AB?style=for-the-badge)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white)
+![NLTK](https://img.shields.io/badge/NLTK-2E7D32?style=for-the-badge&logo=nltk&logoColor=white)
 ![TextBlob](https://img.shields.io/badge/TextBlob-000000?style=for-the-badge)
 
 ## Project Overview
@@ -9,11 +10,17 @@ This project focuses on performing **Sentiment Analysis** (Positive, Negative, N
 The goal is to extract meaningful insights from raw text data.
 
 ## Used Libraries
-* `pandas`
-* `nltk`
-* `textblob`
-* `wordcloud`
-* `matplotlib`
+```python
+import pandas as pd
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import re
+from textblob import TextBlob
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
+nltk.download('punkt_tab')
+```
 
 ## Step-by-Step Implementation
 
