@@ -155,3 +155,7 @@ plt.show()
 ```
 
 ![Pie chart](Piechart_sentiment.png)
+
+### Results
+
+The data analysis reveals a clear, well-structured sentiment distribution across the dataset. Positive sentiment represents the largest category at **42.2%**, with neutral interactions forming a substantial secondary group at **37.1%**—together making up nearly 80% of the overall corpus. Although negative sentiment accounts for the remaining **20.7%**, its volume remains sufficiently large to prevent severe class imbalance issues.
