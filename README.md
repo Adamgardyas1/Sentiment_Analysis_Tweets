@@ -47,14 +47,6 @@ nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 ```
 
-```text
-[nltk_data] Downloading package stopwords to
-[nltk_data]     C:\Users\adamg\AppData\Roaming\nltk_data...
-[nltk_data]   Package stopwords is already up-to-date!
-```
-
-```
-
 ```python
 # Text cleaning function
 def clean_text(text):
@@ -69,7 +61,6 @@ def clean_text(text):
 ```
 
 ```python
-
 # Apply clean_text function to 'text' column
 df['cleaned_text'] = df['text'].apply(clean_text)
 ```
@@ -77,8 +68,6 @@ df['cleaned_text'] = df['text'].apply(clean_text)
 ### Step 3: Sentiment Analysis via TextBlob
 - Extracted continuous polarity scores (`-1.0` to `1.0`) for cleaned text using **TextBlob**.
 - Categorized polarity values into three discrete classes (`negative` for `< 0`, `neutral` for `== 0`, `positive` for `> 0`).
-- Assigned the resulting classification labels to a new `sentiment` column in the dataframe.
-
 
 ```python
 def analyze_sentiment(text):
@@ -93,23 +82,33 @@ def analyze_sentiment(text):
         return 'neutral'
     else:
         return 'positive'
+```
 
+- Assigned the resulting classification labels to a new `sentiment` column in the dataframe.
+
+```python
 # Apply sentiment analysis to cleaned text column
 df['sentiment'] = df['cleaned_text'].apply(analyze_sentiment)
 ```
 
 ### Step 4: Output Inspection & Summary Statistics
 - Displayed dataset head to verify successful column creation and data transformation.
-- Evaluated global sentiment distribution across all records using `value_counts()`.
-- Extracted top 5 sample tweets for each sentiment class (`negative`, `neutral`, `positive`) to inspect classification output.
 
 ```python
 # Display first 5 rows of the modified dataframe
 print(df.head())
+```
+  
+- Evaluated global sentiment distribution across all records using `value_counts()`.
 
+```python
 # Compute total count for each sentiment category
 print(df['sentiment'].value_counts())
+```
 
+- Extracted top 5 sample tweets for each sentiment class (`negative`, `neutral`, `positive`) to inspect classification output.
+
+```python
 # Extract and inspect sample tweets for each sentiment class
 print("\nNegative Tweets:")
 print(df[df['sentiment'] == 'negative'].head(5))
@@ -119,3 +118,4 @@ print(df[df['sentiment'] == 'neutral'].head(5))
 
 print("\nPositive Tweets:")
 print(df[df['sentiment'] == 'positive'].head(5))
+```
