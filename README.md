@@ -138,4 +138,20 @@ plt.show()
 
 ![Barchart](Barchart_sentiment.png)
 
+### Step 6: Sentiment Percentage Share (Pie Chart)
+- Generated a pie chart to illustrate the proportional distribution and percentage share of sentiment classes in the dataset.
+- Configured visual formatting with standard dimensions (`7x7`), distinct colors (`red`, `blue`, `green`), and automatic percentage formatting (`autopct='%1.1f%%'`).
+- Hidden the default y-axis label (`plt.ylabel('')`) to maintain a clean layout focused entirely on class distribution percentages.
 
+```python
+import matplotlib.pyplot as plt
+
+# Plotting the pie chart for sentiment distribution
+plt.figure(figsize=(7, 7))
+df['sentiment'].value_counts().plot(kind='pie', autopct='%1.1f%%', colors=['red', 'blue', 'green'])
+plt.title('Sentiment Distribution')
+plt.ylabel('')
+plt.show()
+```
+
+![Pie chart](Piechart_sentiment.png)
