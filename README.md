@@ -119,3 +119,23 @@ print(df[df['sentiment'] == 'neutral'].head(5))
 print("\nPositive Tweets:")
 print(df[df['sentiment'] == 'positive'].head(5))
 ```
+
+### Step 5: Data Visualization
+- Created a bar chart using `matplotlib` to visually present the distribution of target sentiment classes.
+- Customized plot aesthetics including figure dimensions (`10x5`), color coding (`red`, `blue`, `green`), clear axis labels, and horizontal tick orientation (`rotation=0`).
+- Displayed the overall tweet volume breakdown across negative, neutral, and positive classes.
+
+```python
+import matplotlib.pyplot as plt
+
+# Plotting the sentiment distribution
+plt.figure(figsize=(10, 5))
+df['sentiment'].value_counts().plot(kind='bar', color=['red', 'blue', 'green'])
+plt.title('Distribution of Sentiments')
+plt.xlabel('Sentiment')
+plt.ylabel('Number of Tweets')
+plt.xticks(rotation=0)
+plt.show()
+```
+
+![sentiment_plot](https://github.com/user-attachments/assets/Barchart_sentiment.png)
