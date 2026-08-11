@@ -47,6 +47,12 @@ nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 ```
 
+```text
+[nltk_data] Downloading package stopwords to
+[nltk_data]     C:\Users\adamg\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+```
+
 ```
 
 ```python
