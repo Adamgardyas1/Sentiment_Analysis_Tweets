@@ -10,6 +10,17 @@ This project focuses on performing **Sentiment Analysis** (Positive, Negative, N
 The goal is to extract meaningful insights from raw text data.
 
 ## Used Libraries
+- `pandas`
+- `nltk`
+- `re`
+- `textblob`
+- `matplotlib`
+- `wordcloud`
+
+## Step-by-Step Implementation
+
+### Importing Libraries
+
 ```python
 import pandas as pd
 import nltk
@@ -22,7 +33,6 @@ from wordcloud import WordCloud
 nltk.download('punkt_tab')
 ```
 
-## Step-by-Step Implementation
 
 ### Step 1: Data Loading & Column Selection
 - Loaded the CSV file with predefined column names, specifying `ISO-8859-1` encoding, and selecting the target text column.
