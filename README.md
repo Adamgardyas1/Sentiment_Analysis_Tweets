@@ -34,3 +34,32 @@ df = pd.read_csv(file_path, encoding='ISO-8859-1', names=columns)
 
 # Select relevant column
 df = df[['text']]
+```
+
+### Step 2: Text Cleaning & Preprocessing (NLP)
+* **URL & Mention Removal:** Filtered out web links (`http/https/www`), `@user` mentions, and hashtags (`#`) using regular expressions (`re`).
+* **Punctuation & Formatting:** Stripped special characters/punctuation and converted all text to lower case for normalization.
+* **Tokenization & Stop Words:** Tokenized sentences into individual words using `nltk.word_tokenize` and eliminated common English stop words (`nltk.corpus.stopwords`).
+
+<details>
+<summary>🔍 <b>Click to expand / copy code (Step 2)</b></summary>
+
+```python
+# Download stop words
+nltk.download('stopwords')
+stop_words = set(stopwords.words('english'))
+
+# Text cleaning function
+def clean_text(text):
+    text = re.sub(r"http\S+|www\S+|https\S+", '', text, flags=re.MULTILINE)
+    text = re.sub(r'@\w+', '', text)
+    text = re.sub(r'#\w+', '', text)
+    text = re.sub(r'[^\w\s]', '', text)
+    text = text.lower()
+    words = word_tokenize(text)
+    words = [word for word in words if word not in stop_words]
+    return ' '.join(words)
+
+# Apply clean_text function to 'text' column
+df['cleaned_text'] = df['text'].apply(clean_text)
+```
