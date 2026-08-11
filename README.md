@@ -136,8 +136,6 @@ plt.xticks(rotation=0)
 plt.show()
 ```
 
-<details>
-
 ![Barchart](Barchart_sentiment.png)
 
-</details>
+
