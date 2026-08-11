@@ -15,6 +15,22 @@ The goal is to extract meaningful insights from raw text data.
 * `wordcloud`
 * `matplotlib`
 
-1. **Dataset Loading & Formatting**
-   * Loaded the **Sentiment140** dataset (`training.1600000.processed.noemoticon.csv`) using `ISO-8859-1` encoding.
-   * Mapped original columns (`target`, `id`, `date`, `flag`, `user`, `text`) and extracted the raw `text` column for processing.
+## Step-by-Step Implementation
+
+### Step 1: Data Loading & Column Selection
+Loading the CSV file with predefined column names, specifying `ISO-8859-1` encoding, and selecting the target text column.
+
+```python
+import pandas as pd
+
+# Path to the CSV file
+file_path = 'training.1600000.processed.noemoticon.csv'
+
+# Dataset columns
+columns = ['target', 'id', 'date', 'flag', 'user', 'text']
+
+# Load dataset
+df = pd.read_csv(file_path, encoding='ISO-8859-1', names=columns)
+
+# Select relevant column
+df = df[['text']]
