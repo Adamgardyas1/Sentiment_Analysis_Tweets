@@ -126,8 +126,6 @@ print(df[df['sentiment'] == 'positive'].head(5))
 - Displayed the overall tweet volume breakdown across negative, neutral, and positive classes.
 
 ```python
-import matplotlib.pyplot as plt
-
 # Plotting the sentiment distribution
 plt.figure(figsize=(10, 5))
 df['sentiment'].value_counts().plot(kind='bar', color=['red', 'blue', 'green'])
@@ -137,3 +135,9 @@ plt.ylabel('Number of Tweets')
 plt.xticks(rotation=0)
 plt.show()
 ```
+
+<details>
+
+![Barchart](Barchart_sentiment.png)
+
+</details>
