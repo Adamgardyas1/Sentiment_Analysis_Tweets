@@ -21,11 +21,11 @@ The goal is to extract meaningful insights from raw text data.
 - Loaded the CSV file with predefined column names, specifying `ISO-8859-1` encoding, and selecting the target text column.
 
 ```python
-import pandas as pd
-
 # Path to the CSV file
 file_path = 'training.1600000.processed.noemoticon.csv'
+```
 
+```python
 # Dataset columns
 columns = ['target', 'id', 'date', 'flag', 'user', 'text']
 
@@ -42,10 +42,18 @@ df = df[['text']]
 - Tokenized sentences into individual words using `nltk.word_tokenize` and eliminated common English stop words (`nltk.corpus.stopwords`).
 
 ```python
-# Download stop words
-nltk.download('stopwords')
-stop_words = set(stopwords.words('english'))
+import nltk
+from nltk.corpus import stopwords
 
+# Download NLTK data packages
+nltk.download('stopwords')
+nltk.download('punkt')
+
+# Load English stop words
+stop_words = set(stopwords.words('english'))
+```
+
+```python
 # Text cleaning function
 def clean_text(text):
     text = re.sub(r"http\S+|www\S+|https\S+", '', text, flags=re.MULTILINE)
@@ -56,6 +64,9 @@ def clean_text(text):
     words = word_tokenize(text)
     words = [word for word in words if word not in stop_words]
     return ' '.join(words)
+```
+
+```python
 
 # Apply clean_text function to 'text' column
 df['cleaned_text'] = df['text'].apply(clean_text)
