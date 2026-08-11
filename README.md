@@ -137,5 +137,3 @@ plt.ylabel('Number of Tweets')
 plt.xticks(rotation=0)
 plt.show()
 ```
-
-![sentiment_plot](https://github.com/user-attachments/assets/Barchart_sentiment.png)
