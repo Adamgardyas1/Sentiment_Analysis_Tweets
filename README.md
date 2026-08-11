@@ -41,9 +41,6 @@ df = df[['text']]
 * **Punctuation & Formatting:** Stripped special characters/punctuation and converted all text to lower case for normalization.
 * **Tokenization & Stop Words:** Tokenized sentences into individual words using `nltk.word_tokenize` and eliminated common English stop words (`nltk.corpus.stopwords`).
 
-<details>
-<summary>🔍 <b>Click to expand / copy code (Step 2)</b></summary>
-
 ```python
 # Download stop words
 nltk.download('stopwords')
